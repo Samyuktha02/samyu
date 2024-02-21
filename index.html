@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 7</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+
+        const fruits = ["apple","strawberry","banana","orange"];
+        let flen = fruits.length;
+        let text = "<ol>";
+                for (i = 0; i < flen; i++) {
+                    text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ol>";                                     
+document.getElementById("demo").innerHTML = text;
+
+
+
+
+// ------------------for each----------------------------------------
+
+    const numbers = [2, 4, 5, 6, 7 ,8];
+    let txt = "";
+    numbers.forEach(myFun);
+    document.getElementById("demo").innerHTML = txt;
+    function myFun(value, index, array) {
+        txt = txt + value + "<br>";
+    }
+
+// ---------------------map-------------------------------------
+
+    const numbers1 = ["sam","ovi"];
+    const numbers2 = numbers1.map(myFunction);
+    document.getElementById("demo").innerHTML = numbers2;
+    function myFunction(value, index, array) {
+        return value+"hello";
+    }
+
+// ---------------------flatmap-------------------------------------
+// do in for loop.... get num from user..for(i=1;i<=10;i++)...num*i
+
+      const myArr = [1, 2, 3, 4, 5, 6];
+        const newArr = myArr.flatMap((x) => x * 2);
+        document.getElementById("demo").innerHTML = newArr;
+        
+// ---------------------filter-------------------------------------
+
+    const numbers = [45, 4, 9, 16, 25 , 18];
+        const over18 = numbers.filter(myFunction);
+        function myFunction(value) {
+            return value == 18;
+        }
+        document.getElementById("demo").innerHTML = over18;
+
+// ---------------------every------------------------------------- 
+
+    const numbers = [17, 19, 9, 15, 16];
+    let allOver18 = numbers.every(myFunction);
+    document.getElementById("demo").innerHTML = "All over 18 is " + allOver18;
+    function myFunction(value, index, array) {
+        return value < 18;
+    }   
+
+// ---------------------some------------------------------------- 
+
+    const numbers = [45, 4, 9, 16, 25];
+    let someOver18 = numbers.some(myFunction);
+    document.getElementById("demo").innerHTML = "Some over 18 is " + someOver18;
+    function myFunction(value, index, array) {
+        return value > 18;
+    }
+
+// ---------------------reduce------------------------------------- 
+ let donations = [10,20,30,40,50];
+ let don = donations.reduce(function(previousval,currentval){
+    return previousval+currentval
+ })
+document.getElementById('demo').innerHTML=don
+
+// ---------------------reduceright------------------------------------- 
+
+let cart = [
+    { id: 1, item: "milk", cost: 20 },
+    { id: 2, item: "masala", cost: 30 },
+    { id: 3, item: "sauce", cost: 50 }
+];
+let cartval = cart.reduceRight((accumulator,currentval) => accumulator + currentval.cost
+,0);
+document.getElementById("demo").innerHTML = cartval
+
+// ---------------------key------------------------------------- 
+
+const Names = ["samyu", "ovi", "rajie", "harini"];
+const keys = Names.keys();
+let text = "";
+for (let a of keys) {
+    text = text + a + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+
+// ---------------------entries------------------------------------- 
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const entries = fruits.entries();
+for (let x of entries) {
+  document.getElementById("demo").innerHTML += x + "<br>";
+}
+
+// ---------------------with------------------------------------- 
+
+const months = ["Januar", "Februar", "Mar", "April"];
+const myMonths = months.with(3, "March");
+document.getElementById("demo").innerHTML = myMonths;
+
+// ---------------------sort------------------------------------- 
+
+const fruits = ["banana","orange","apple","strawberry"]
+fruits.sort()
+document.getElementById("demo").innerHTML = fruits
+
+// ---------------------tosorted------------------------------------- 
+
+const fruits = ["banana","orange","apple","strawberry"]
+const sfruits = fruits.toSorted()
+document.getElementById("demo").innerHTML = sfruits;
+
+    </script>
+</body>
+</html>
